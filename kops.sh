@@ -14,5 +14,5 @@ mv kops-linux-amd64 /usr/local/bin/kops
 aws s3api create-bucket --bucket maha.project.k8s.local --region us-east-1
 aws s3api put-bucket-versioning --bucket maha.project.k8s.local --region us-east-1 --versioning-configuration Status=Enabled
 export KOPS_STATE_STORE=s3://maha.project.k8s.local
-kops create cluster --name rahams.k8s.local --zones us-east-1a --master-count=1 --master-size t2.medium --node-count=2 --node-size t2.medium
-kops update cluster --name rahams.k8s.local --yes --admin
+kops create cluster --name maha.k8s.local --zones us-east-1a,us-east-1b --master-count=1 --master-size t2.large --master-volume-size 30  --node-count=3 --node-size t2.medium  --node-volume-size 20
+kops update cluster --name maha.k8s.local --yes --admin
