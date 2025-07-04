@@ -10,7 +10,7 @@ sudo mv nexus-unix* nexus
 sudo adduser nexus
 sudo chown -R nexus:nexus /app/nexus
 sudo chown -R nexus:nexus /app/sonatype-work
-sudo echo "run_as_user="nexus"" > /app/nexus/bin/nexus.rc
+sudo echo "run_as_user="nexus"" > /app/nexus-3.78.2-04/bin/nexus.rc
 sudo tee /etc/systemd/system/nexus.service > /dev/null << EOL
 [Unit]
 Description=nexus service
@@ -21,8 +21,8 @@ Type=forking
 LimitNOFILE=65536
 User=nexus
 Group=nexus
-ExecStart=/app/nexus/bin/nexus start
-ExecStop=/app/nexus/bin/nexus stop
+ExecStart=/app/nexus-3.78.2-04/bin/nexus start
+ExecStop=/app/nexus-3.78.2-04/bin/nexus stop
 User=nexus
 Restart=on-abort
 
