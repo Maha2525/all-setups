@@ -12,7 +12,7 @@ sudo chown -R nexus:nexus /app/nexus
 sudo chown -R nexus:nexus /app/sonatype-work
 sudo echo "run_as_user="nexus"" > /app/nexus-3.78.2-04/bin/nexus.rc
 sudo tee /etc/systemd/system/nexus.service > /dev/null << EOL
-[Unit]
+[Unit] 
 Description=nexus service
 After=network.target
 
