@@ -4,11 +4,11 @@ sudo yum update -y
 sudo yum install wget -y
 sudo yum install java-17-amazon-corretto-jmods -y
 sudo mkdir /app && cd /app
-sudo wget https://download.sonatype.com/nexus/3/nexus-unix-x86-64-3.79.0-09.tar.g
+sudo wget https://download.sonatype.com/nexus/3/nexus-unix-x86-64-3.79.0-09.tar.gz
 sudo tar -xvf nexus-unix-x86-64-3.79.0-09.tar.gz
 sudo mv nexus-unix* nexus
 sudo adduser nexus
-sudo chown -R nexus:nexus /app/nexus
+sudo chown -R nexus:nexus /app/nexus-3.79.0-09
 sudo chown -R nexus:nexus /app/sonatype-work
 sudo echo "run_as_user="nexus"" > /app/nexus-3.79.0-09/bin/nexus.rc
 sudo tee /etc/systemd/system/nexus.service > /dev/null << EOL
